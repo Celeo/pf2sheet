@@ -13,6 +13,7 @@ import {
   TableRow
 } from '@material-ui/core'
 import './App.css'
+import { Ability, Skill } from './characterDataModels'
 import * as characterData from './data.json'
 
 // const useStyles = makeStyles((theme: Theme) => createStyles({}))
@@ -34,7 +35,7 @@ const App = () => {
     <div>
       <Container>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>General</h3>
+          <h3>General</h3>
           <TableContainer>
             <Table>
               <TableHead>
@@ -101,7 +102,7 @@ const App = () => {
           </TableContainer>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Abilities</h3>
+          <h3>Abilities</h3>
           <TableContainer>
             <Table>
               <TableHead>
@@ -113,8 +114,8 @@ const App = () => {
               </TableHead>
               <TableBody>
                 {
-                  characterData.abilities.map((ability: any) => (
-                    <TableRow>
+                  characterData.abilities.map((ability: Ability) => (
+                    <TableRow key={ability.name}>
                       <TableCell>{ ability.name }</TableCell>
                       <TableCell>{ abilityMod(ability.score) }</TableCell>
                       <TableCell>{ ability.score }</TableCell>
@@ -126,7 +127,7 @@ const App = () => {
           </TableContainer>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Skills</h3>
+          <h3>Skills</h3>
           <TableContainer>
             <Table>
               <TableHead>
@@ -134,19 +135,19 @@ const App = () => {
                   <TableCell>Name</TableCell>
                   <TableCell>Attribute</TableCell>
                   <TableCell>Proficiency</TableCell>
-                  <TableCell>Items</TableCell>
+                  <TableCell>From items</TableCell>
                   <TableCell><strong>Total</strong></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
             {
-              characterData.skills.map((skill: any) => (
-                <TableRow>
+              characterData.skills.map((skill: Skill) => (
+                <TableRow key={skill.name}>
                   <TableCell>{ skill.name }</TableCell>
                   <TableCell>{ skill.attribute }</TableCell>
                   <TableCell>{ skill.proficiency }</TableCell>
                   <TableCell>{ skill.fromItems }</TableCell>
-                  <TableCell><strong>0</strong></TableCell>
+                  <TableCell><strong>TODO</strong></TableCell>
                 </TableRow>
               ))
             }
@@ -155,24 +156,147 @@ const App = () => {
           </TableContainer>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Attacks</h3>
-          {/* TODO */}
+          <h3>Attacks</h3>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Proficiency</TableCell>
+                  <TableCell>Attack ability</TableCell>
+                  <TableCell>To hit item bonus</TableCell>
+                  <TableCell>Damage die</TableCell>
+                  <TableCell>Damage ability</TableCell>
+                  <TableCell>Damage type</TableCell>
+                  <TableCell>Damage bonus</TableCell>
+                  <TableCell>Traits</TableCell>
+                  <TableCell><strong>Attack</strong></TableCell>
+                  <TableCell><strong>Damage</strong></TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  characterData.offense.attacks.map((attack: any) => (
+                    <TableRow key={attack.name}>
+                      <TableCell>{ attack.name }</TableCell>
+                      <TableCell>{ attack.toHit.proficiency }</TableCell>
+                      <TableCell>{ attack.toHit.ability }</TableCell>
+                      <TableCell>{ attack.toHit.fromItems }</TableCell>
+                      <TableCell>{ attack.damage.die }</TableCell>
+                      <TableCell>{ attack.damage.ability }</TableCell>
+                      <TableCell>{ attack.damage.damageType }</TableCell>
+                      <TableCell>{ attack.damage.other }</TableCell>
+                      <TableCell>{ attack.damage.traits }</TableCell>
+                      <TableCell><strong>TODO</strong></TableCell>
+                      <TableCell><strong>TODO</strong></TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Defense</h3>
-          {/* TODO */}
+          <h3>Defense</h3>
+          <h4>Health</h4>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Max</TableCell>
+                  <TableCell>Current</TableCell>
+                  <TableCell>Temp</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>{ characterData.defense.health.max }</TableCell>
+                  <TableCell>{ characterData.defense.health.current }</TableCell>
+                  <TableCell>{ characterData.defense.health.temporary }</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <h4>Armor Class</h4>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell />
+                  <TableCell />
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>Wearing</TableCell>
+                  <TableCell>{ characterData.defense.armorClass.wearing }</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Dex. cap</TableCell>
+                  <TableCell>{ characterData.defense.armorClass.dexterityCap }</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Proficiency</TableCell>
+                  <TableCell>{ characterData.defense.armorClass.proficiency }</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>Item bonus</TableCell>
+                  <TableCell>{ characterData.defense.armorClass.fromItems }</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Feats</h3>
-          {/* TODO */}
+          <h3>Feats</h3>
+          <h4>Ancestry</h4>
+          <ul>
+            { characterData.feats.ancestry.map((feat: any) => <li key={feat}>{ feat }</li>) }
+          </ul>
+          <h4>Class</h4>
+          <ul>
+            { characterData.feats.class.map((feat: any) => <li key={feat}>{ feat }</li>) }
+          </ul>
+          <h4>Skill</h4>
+          <ul>
+            { characterData.feats.skill.map((feat: any) => <li key={feat}>{ feat }</li>) }
+          </ul>
+          <h4>General</h4>
+          <ul>
+            { characterData.feats.general.map((feat: any) => <li key={feat}>{ feat }</li>) }
+          </ul>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Class Features</h3>
-          {/* TODO */}
+          <h3>Class Features</h3>
+          <ul>
+            { characterData.classFeatures.map((feat: any) => <li key={feat}>{ feat }</li>) }
+          </ul>
         </Paper>
         <Paper>
-          <h3 style={{ paddingLeft: "10px" }}>Gear</h3>
-          {/* TODO */}
+          <h3>Gear</h3>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>PP</TableCell>
+                  <TableCell>GP</TableCell>
+                  <TableCell>SP</TableCell>
+                  <TableCell>CP</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>{ characterData.gear.money.pp }</TableCell>
+                  <TableCell>{ characterData.gear.money.gp }</TableCell>
+                  <TableCell>{ characterData.gear.money.sp }</TableCell>
+                  <TableCell>{ characterData.gear.money.cp }</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </TableContainer>
+          <ul>
+            { characterData.gear.items.map((item: any) => <li key={item}>{ item }</li>) }
+          </ul>
         </Paper>
       </Container>
     </div>

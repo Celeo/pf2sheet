@@ -220,6 +220,7 @@
       "temporary": 0
     },
     "armorClass": {
+      "wearing": "Clothing (Explorer's)",
       "dexterityCap": 5,
       "proficiency": "T",
       "fromItems": 0

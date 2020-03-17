@@ -155,9 +155,9 @@
       "temporary": 0
     },
     "armorClass": {
+      "wearing": "",
       "dexterityCap": 0,
       "proficiencyLevel": "",
-      "proficiencyAmount": 0,
       "fromItems": 0
     }
   },
