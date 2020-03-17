@@ -1,0 +1,180 @@
+{
+  "general": {
+    "level": 1,
+    "experience": 0,
+    "name": "",
+    "playerName": "",
+    "ancestry": "",
+    "background": "",
+    "class": "",
+    "alignment": "",
+    "deity": "",
+    "age": 0,
+    "gender": "",
+    "languages": [],
+    "speed": 25,
+    "heroPoints": 1
+  },
+  "abilities": [
+    {
+      "name": "Strength",
+      "score": 10
+    },
+    {
+      "name": "Dexterity",
+      "score": 10
+    },
+    {
+      "name": "Constitution",
+      "score": 10
+    },
+    {
+      "name": "Intelligence",
+      "score": 10
+    },
+    {
+      "name": "Wisdom",
+      "score": 10
+    },
+    {
+      "name": "Charisma",
+      "score": 10
+    }
+  ],
+  "skills": [
+    {
+      "name": "Acrobatics",
+      "attribute": "Dexterity",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Arcana",
+      "attribute": "Intelligence",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Athletics",
+      "attribute": "Strength",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Crafting",
+      "attribute": "Intelligence",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Deception",
+      "attribute": "Charisma",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Diplomacy",
+      "attribute": "Charisma",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Intimidation",
+      "attribute": "Charisma",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Lore",
+      "attribute": "Intelligence",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Medicine",
+      "attribute": "Wisdom",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Nature",
+      "attribute": "Wisdom",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Occultism",
+      "attribute": "Intelligence",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Performance",
+      "attribute": "Charisma",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Religion",
+      "attribute": "Wisdom",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Society",
+      "attribute": "Intelligence",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Stealth",
+      "attribute": "Dexterity",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Survival",
+      "attribute": "Wisdom",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Thievery",
+      "attribute": "Dexterity",
+      "proficiencyLevel": "",
+      "fromItems": 0
+    }
+  ],
+  "offense": {
+    "attacks": []
+  },
+  "defense": {
+    "health": {
+      "max": 0,
+      "current": 0,
+      "temporary": 0
+    },
+    "armorClass": {
+      "dexterityCap": 0,
+      "proficiencyLevel": "",
+      "proficiencyAmount": 0,
+      "fromItems": 0
+    }
+  },
+  "feats": {
+    "ancestry": [],
+    "class": [],
+    "skill": [],
+    "general": []
+  },
+  "gear": {
+    "items": [],
+    "money": {
+      "pp": 0,
+      "gp": 0,
+      "sp": 0,
+      "cp": 0
+    }
+  },
+  "classFeatures": []
+}

@@ -1,0 +1,264 @@
+{
+  "general": {
+    "level": 2,
+    "experience": 0,
+    "name": "Elas Dorr",
+    "playerName": "Matt",
+    "ancestry": "Human",
+    "background": "Street Urchin",
+    "class": "Monk",
+    "alignment": "N",
+    "deity": "",
+    "age": 30,
+    "gender": "M",
+    "languages": [
+      "Common",
+      "Dwarvish",
+      "Gnomish"
+    ],
+    "speed": 25,
+    "heroPoints": 2
+  },
+  "abilities": [
+    {
+      "name": "Strength",
+      "score": 14
+    },
+    {
+      "name": "Dexterity",
+      "score": 18
+    },
+    {
+      "name": "Constitution",
+      "score": 14
+    },
+    {
+      "name": "Intelligence",
+      "score": 12
+    },
+    {
+      "name": "Wisdom",
+      "score": 10
+    },
+    {
+      "name": "Charisma",
+      "score": 10
+    }
+  ],
+  "skills": [
+    {
+      "name": "Acrobatics",
+      "attribute": "Dexterity",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Arcana",
+      "attribute": "Intelligence",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Athletics",
+      "attribute": "Strength",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Crafting",
+      "attribute": "Intelligence",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Deception",
+      "attribute": "Charisma",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Diplomacy",
+      "attribute": "Charisma",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Intimidation",
+      "attribute": "Charisma",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Lore",
+      "attribute": "Intelligence",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Medicine",
+      "attribute": "Wisdom",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Nature",
+      "attribute": "Wisdom",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Occultism",
+      "attribute": "Intelligence",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Performance",
+      "attribute": "Charisma",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Religion",
+      "attribute": "Wisdom",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Society",
+      "attribute": "Intelligence",
+      "proficiency": "",
+      "fromItems": 0
+    },
+    {
+      "name": "Stealth",
+      "attribute": "Dexterity",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Survival",
+      "attribute": "Wisdom",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
+      "name": "Thievery",
+      "attribute": "Dexterity",
+      "proficiency": "T",
+      "fromItems": 0
+    }
+  ],
+  "offense": {
+    "attacks": [
+      {
+        "name": "Unarmed",
+        "toHit": {
+          "proficiency": "T",
+          "ability": "Dexterity",
+          "fromItems": 0
+        },
+        "damage": {
+          "die": "1d6",
+          "ability": "Strength",
+          "damageType": "BPS",
+          "other": 0,
+          "traits": "AFNU"
+        }
+      },
+      {
+        "name": "Crane Wing",
+        "toHit": {
+          "proficiency": "T",
+          "ability": "Dexterity",
+          "fromItems": 0
+        },
+        "damage": {
+          "die": "1d6",
+          "ability": "Strength",
+          "damageType": "B",
+          "other": 0,
+          "traits": "AFNU"
+        }
+      },
+      {
+        "name": "Wolf Jaw",
+        "toHit": {
+          "proficiency": "T",
+          "ability": "Dexterity",
+          "fromItems": 0
+        },
+        "damage": {
+          "die": "1d8",
+          "ability": "Strength",
+          "damageType": "P",
+          "other": 0,
+          "traits": "ABFNU(T)"
+        }
+      },
+      {
+        "name": "Dart",
+        "toHit": {
+          "proficiency": "T",
+          "ability": "Dexterity",
+          "fromItems": 0
+        },
+        "damage": {
+          "die": "1d4",
+          "ability": "",
+          "damageType": "P",
+          "other": 2,
+          "traits": ""
+        }
+      }
+    ]
+  },
+  "defense": {
+    "health": {
+      "max": 34,
+      "current": 34,
+      "temporary": 0
+    },
+    "armorClass": {
+      "dexterityCap": 5,
+      "proficiency": "T",
+      "fromItems": 0
+    }
+  },
+  "feats": {
+    "ancestry": [
+      "Versatile Heritage"
+    ],
+    "class": [
+      "Crane Stance",
+      "Wolf Stance"
+    ],
+    "skill": [
+      "Pickpocket",
+      "Titan Wrestler"
+    ],
+    "general": [
+      "Toughness"
+    ]
+  },
+  "gear": {
+    "items": [
+      "Adventurer's Pack",
+      "Climbing Kit",
+      "Clothing (Explorer's)",
+      "Clothing (Winter)",
+      "Thieves' Tools"
+    ],
+    "money": {
+      "pp": 0,
+      "gp": 10,
+      "sp": 0,
+      "cp": 6
+    }
+  },
+  "classFeatures": [
+    "Powerful Fist",
+    "Flurry of Blows",
+    "Stunning Fist"
+  ]
+}
