@@ -13,7 +13,7 @@ import {
   TableRow
 } from '@material-ui/core'
 import './App.css'
-import { Ability, Skill } from './characterDataModels'
+import { Ability, Attack, Skill } from './characterDataModels'
 import * as characterData from './data.json'
 
 // const useStyles = makeStyles((theme: Theme) => createStyles({}))
@@ -176,7 +176,7 @@ const App = () => {
               </TableHead>
               <TableBody>
                 {
-                  characterData.offense.attacks.map((attack: any) => (
+                  characterData.offense.attacks.map((attack: Attack) => (
                     <TableRow key={attack.name}>
                       <TableCell>{ attack.name }</TableCell>
                       <TableCell>{ attack.toHit.proficiency }</TableCell>
@@ -251,25 +251,25 @@ const App = () => {
           <h3>Feats</h3>
           <h4>Ancestry</h4>
           <ul>
-            { characterData.feats.ancestry.map((feat: any) => <li key={feat}>{ feat }</li>) }
+            { characterData.feats.ancestry.map((feat: string) => <li key={feat}>{ feat }</li>) }
           </ul>
           <h4>Class</h4>
           <ul>
-            { characterData.feats.class.map((feat: any) => <li key={feat}>{ feat }</li>) }
+            { characterData.feats.class.map((feat: string) => <li key={feat}>{ feat }</li>) }
           </ul>
           <h4>Skill</h4>
           <ul>
-            { characterData.feats.skill.map((feat: any) => <li key={feat}>{ feat }</li>) }
+            { characterData.feats.skill.map((feat: string) => <li key={feat}>{ feat }</li>) }
           </ul>
           <h4>General</h4>
           <ul>
-            { characterData.feats.general.map((feat: any) => <li key={feat}>{ feat }</li>) }
+            { characterData.feats.general.map((feat: string) => <li key={feat}>{ feat }</li>) }
           </ul>
         </Paper>
         <Paper>
           <h3>Class Features</h3>
           <ul>
-            { characterData.classFeatures.map((feat: any) => <li key={feat}>{ feat }</li>) }
+            { characterData.classFeatures.map((feat: string) => <li key={feat}>{ feat }</li>) }
           </ul>
         </Paper>
         <Paper>
@@ -295,7 +295,7 @@ const App = () => {
             </Table>
           </TableContainer>
           <ul>
-            { characterData.gear.items.map((item: any) => <li key={item}>{ item }</li>) }
+            { characterData.gear.items.map((item: string) => <li key={item}>{ item }</li>) }
           </ul>
         </Paper>
       </Container>
