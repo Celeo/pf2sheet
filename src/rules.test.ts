@@ -27,6 +27,7 @@ describe('formatMod', () => {
 describe('getProficiencyMod', () => {
   it('produces the correct values', () => {
     expect(getProficiencyMod("", 0)).toBe(0)
+    expect(getProficiencyMod("", 1)).toBe(0)
     expect(getProficiencyMod("T", 1)).toBe(3)
     expect(getProficiencyMod("T", 2)).toBe(4)
     expect(getProficiencyMod("E", 1)).toBe(5)
@@ -58,6 +59,16 @@ describe('calculateSkillMod', () => {
       name: "Intelligence",
       score: 14
     }])).toBe(7)
+
+    expect(calculateSkillMod({
+      name: "Arcana",
+      ability: "Intelligence",
+      proficiency: "",
+      fromItems: 0
+    }, 1, [{
+      name: "Intelligence",
+      score: 10
+    }])).toBe(0)
   })
 })
 

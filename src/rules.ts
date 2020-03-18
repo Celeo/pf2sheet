@@ -12,6 +12,9 @@ export const formatMod = (mod: number): string => {
 export const getProficiencyMod = (proficiency: string, level: number): number => {
   let val = 0
   switch (proficiency) {
+    case "": {
+      return 0
+    }
     case "T": {
       val = 2
       break

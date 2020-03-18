@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core'
 import './App.css'
 import { Ability, Attack, Skill } from './characterDataModels'
-import { getAbilityMod, formatMod } from './rules'
+import { getAbilityMod, formatMod, calculateSkillMod } from './rules'
 import * as characterData from './data.json'
 
 // const useStyles = makeStyles((theme: Theme) => createStyles({}))
@@ -137,7 +137,7 @@ const App = () => {
                   <TableCell>{ skill.ability }</TableCell>
                   <TableCell>{ skill.proficiency }</TableCell>
                   <TableCell>{ skill.fromItems }</TableCell>
-                  <TableCell><strong>TODO</strong></TableCell>
+                  <TableCell><strong>{ calculateSkillMod(skill, characterData.general.level, characterData.abilities) }</strong></TableCell>
                 </TableRow>
               ))
             }
