@@ -14,7 +14,7 @@ import {
 } from '@material-ui/core'
 import './App.css'
 import { Ability, Attack, Skill } from './characterDataModels'
-import { getAbilityMod, formatMod, calculateSkillMod } from './rules'
+import { getAbilityMod, formatMod, calculateSkillMod, calculateAttackMod } from './rules'
 import * as characterData from './data.json'
 
 // const useStyles = makeStyles((theme: Theme) => createStyles({}))
@@ -161,7 +161,6 @@ const App = () => {
                   <TableCell>Damage bonus</TableCell>
                   <TableCell>Traits</TableCell>
                   <TableCell><strong>Attack</strong></TableCell>
-                  <TableCell><strong>Damage</strong></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -177,8 +176,7 @@ const App = () => {
                       <TableCell>{ attack.damage.damageType }</TableCell>
                       <TableCell>{ attack.damage.other }</TableCell>
                       <TableCell>{ attack.damage.traits }</TableCell>
-                      <TableCell><strong>TODO</strong></TableCell>
-                      <TableCell><strong>TODO</strong></TableCell>
+                      <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
                     </TableRow>
                   ))
                 }

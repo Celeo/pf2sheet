@@ -210,6 +210,21 @@
           "other": 2,
           "traits": ""
         }
+      },
+      {
+        "name": "Bo staff",
+        "toHit": {
+          "proficiency": "",
+          "ability": "Strength",
+          "fromItems": 0
+        },
+        "damage": {
+          "die": "1d6",
+          "ability": "Strength",
+          "damageType": "B",
+          "other": 0,
+          "traits": "Monk/Parry/Reach/Trip"
+        }
       }
     ]
   },
