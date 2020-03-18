@@ -14,20 +14,10 @@ import {
 } from '@material-ui/core'
 import './App.css'
 import { Ability, Attack, Skill } from './characterDataModels'
+import { getAbilityMod, formatMod } from './rules'
 import * as characterData from './data.json'
 
 // const useStyles = makeStyles((theme: Theme) => createStyles({}))
-
-const abilityMod = (score: number): string => {
-  let mod = Math.floor((score - 10) / 2)
-  if (mod > 0) {
-    return `+${mod}`
-  }
-  if (mod < 0) {
-    return `-${mod}`
-  }
-  return mod.toString()
-}
 
 const App = () => {
   // const classes = useStyles()
@@ -117,7 +107,7 @@ const App = () => {
                   characterData.abilities.map((ability: Ability) => (
                     <TableRow key={ability.name}>
                       <TableCell>{ ability.name }</TableCell>
-                      <TableCell>{ abilityMod(ability.score) }</TableCell>
+                      <TableCell>{ formatMod(getAbilityMod(ability.score)) }</TableCell>
                       <TableCell>{ ability.score }</TableCell>
                     </TableRow>
                   ))
@@ -144,7 +134,7 @@ const App = () => {
               characterData.skills.map((skill: Skill) => (
                 <TableRow key={skill.name}>
                   <TableCell>{ skill.name }</TableCell>
-                  <TableCell>{ skill.attribute }</TableCell>
+                  <TableCell>{ skill.ability }</TableCell>
                   <TableCell>{ skill.proficiency }</TableCell>
                   <TableCell>{ skill.fromItems }</TableCell>
                   <TableCell><strong>TODO</strong></TableCell>

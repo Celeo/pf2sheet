@@ -10,18 +10,18 @@ export class Ability {
 
 export class Skill {
   public name: string
-  public attribute: string
+  public ability: string
   public proficiency: string
   public fromItems: number
 
   public constructor(
     name: string,
-    attribute: string,
+    ability: string,
     proficiency: string,
     fromItems: number
   ) {
     this.name = name
-    this.attribute = attribute
+    this.ability = ability
     this.proficiency = proficiency
     this.fromItems = fromItems
   }

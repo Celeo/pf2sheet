@@ -48,103 +48,103 @@
   "skills": [
     {
       "name": "Acrobatics",
-      "attribute": "Dexterity",
+      "ability": "Dexterity",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Arcana",
-      "attribute": "Intelligence",
+      "ability": "Intelligence",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Athletics",
-      "attribute": "Strength",
+      "ability": "Strength",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Crafting",
-      "attribute": "Intelligence",
+      "ability": "Intelligence",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Deception",
-      "attribute": "Charisma",
+      "ability": "Charisma",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Diplomacy",
-      "attribute": "Charisma",
+      "ability": "Charisma",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Intimidation",
-      "attribute": "Charisma",
+      "ability": "Charisma",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Lore",
-      "attribute": "Intelligence",
+      "ability": "Intelligence",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Medicine",
-      "attribute": "Wisdom",
+      "ability": "Wisdom",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Nature",
-      "attribute": "Wisdom",
+      "ability": "Wisdom",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Occultism",
-      "attribute": "Intelligence",
+      "ability": "Intelligence",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Performance",
-      "attribute": "Charisma",
+      "ability": "Charisma",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Religion",
-      "attribute": "Wisdom",
+      "ability": "Wisdom",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Society",
-      "attribute": "Intelligence",
+      "ability": "Intelligence",
       "proficiency": "",
       "fromItems": 0
     },
     {
       "name": "Stealth",
-      "attribute": "Dexterity",
+      "ability": "Dexterity",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Survival",
-      "attribute": "Wisdom",
+      "ability": "Wisdom",
       "proficiency": "T",
       "fromItems": 0
     },
     {
       "name": "Thievery",
-      "attribute": "Dexterity",
+      "ability": "Dexterity",
       "proficiency": "T",
       "fromItems": 0
     }
