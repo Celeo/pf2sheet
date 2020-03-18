@@ -72,3 +72,48 @@ export class Attack {
     this.damage = damage
   }
 }
+
+export class Health {
+  public max: number
+  public current: number
+  public temporary: number
+
+  public constructor(
+    max: number,
+    current: number,
+    temporary: number
+  ) {
+    this.max = max
+    this.current = current
+    this.temporary = temporary
+  }
+}
+
+export class ArmorClass {
+  public wearing: string
+  public dexterityCap: number
+  public proficiency: string
+  public fromItems: number
+
+  public constructor(
+    wearing: string,
+    dexterityCap: number,
+    proficiency: string,
+    fromItems: number
+  ) {
+    this.wearing = wearing
+    this.dexterityCap = dexterityCap
+    this.proficiency = proficiency
+    this.fromItems = fromItems
+  }
+}
+
+export class Defense {
+  public health: Health
+  public armorClass: ArmorClass
+
+  public constructor(health: Health, armorClass: ArmorClass) {
+    this.health = health
+    this.armorClass = armorClass
+  }
+}

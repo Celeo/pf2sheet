@@ -1,4 +1,13 @@
-import { Ability, Attack, Skill } from './characterDataModels'
+import { Ability, Attack, Skill, ArmorClass } from './characterDataModels'
+
+// TODO use this
+export enum ProficiencyType {
+  Untrained = "",
+  Trained = "T",
+  Expert = "E",
+  Master = "M",
+  Legendary = "L"
+}
 
 export const getAbilityMod = (score: number): number => Math.floor((score - 10) / 2)
 
@@ -51,5 +60,14 @@ export const calculateAttackMod = (attack: Attack, level: number, abilities: Arr
   total += getAbilityMod(lookupAbilityScore(abilities, attack.toHit.ability))
   total += getProficiencyMod(attack.toHit.proficiency, level)
   total += attack.toHit.fromItems
+  return total
+}
+
+export const calculateArmorClass = (level: number, abilities: Array<Ability>, armorClass: ArmorClass): number => {
+  let total = 10
+  const fromDex = getAbilityMod(lookupAbilityScore(abilities, "Dexterity"))
+  total += Math.min(fromDex, armorClass.dexterityCap)
+  total += getProficiencyMod(armorClass.proficiency, level)
+  total += armorClass.fromItems
   return total
 }

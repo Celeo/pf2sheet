@@ -4,7 +4,8 @@ import {
   getProficiencyMod,
   lookupAbilityScore,
   calculateSkillMod,
-  calculateAttackMod
+  calculateAttackMod,
+  calculateArmorClass
 } from './rules'
 
 describe('getAbilityMod', () => {
@@ -92,5 +93,19 @@ describe('calculateAttackMod', () => {
       name: "Strength",
       score: 20
     }])).toBe(13)
+  })
+})
+
+describe('calculateArmorClass', () => {
+  it('produces the correct values', () => {
+    expect(calculateArmorClass(1, [{
+      name: "Dexterity",
+      score: 14
+    }], {
+      wearing: "Something",
+      proficiency: "T",
+      dexterityCap: 4,
+      fromItems: 1
+    })).toBe(16)
   })
 })
