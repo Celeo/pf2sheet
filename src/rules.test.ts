@@ -5,7 +5,8 @@ import {
   lookupAbilityScore,
   calculateSkillMod,
   calculateAttackMod,
-  calculateArmorClass
+  calculateArmorClass,
+  calculateSavingThrow
 } from './rules'
 
 describe('getAbilityMod', () => {
@@ -107,5 +108,19 @@ describe('calculateArmorClass', () => {
       dexterityCap: 4,
       fromItems: 1
     })).toBe(16)
+  })
+})
+
+describe('calculateSavingThrow', () => {
+  it('produces the correct values', () => {
+    expect(calculateSavingThrow({
+      name: "Fortitude",
+      ability: "Constitution",
+      proficiency: "T",
+      fromItems: 2
+    }, 3, [{
+      name: "Constitution",
+      score: 16
+    }])).toBe(10)
   })
 })

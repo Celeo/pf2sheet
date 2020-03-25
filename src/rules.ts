@@ -1,4 +1,4 @@
-import { Ability, Attack, Skill, ArmorClass } from './characterDataModels'
+import { Ability, Attack, Skill, ArmorClass, SavingThrow } from './characterDataModels'
 
 // TODO use this
 export enum ProficiencyType {
@@ -69,5 +69,13 @@ export const calculateArmorClass = (level: number, abilities: Array<Ability>, ar
   total += Math.min(fromDex, armorClass.dexterityCap)
   total += getProficiencyMod(armorClass.proficiency, level)
   total += armorClass.fromItems
+  return total
+}
+
+export const calculateSavingThrow = (save: SavingThrow, level: number, abilities: Array<Ability>): number => {
+  let total = 0
+  total += getAbilityMod(lookupAbilityScore(abilities, save.ability))
+  total += getProficiencyMod(save.proficiency, level)
+  total += save.fromItems
   return total
 }

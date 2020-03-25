@@ -113,6 +113,12 @@
       "fromItems": 0
     },
     {
+      "name": "Perception",
+      "ability": "Wisdom",
+      "proficiency": "T",
+      "fromItems": 0
+    },
+    {
       "name": "Performance",
       "ability": "Charisma",
       "proficiency": "",
@@ -239,7 +245,27 @@
       "dexterityCap": 5,
       "proficiency": "E",
       "fromItems": 0
-    }
+    },
+    "savingThrows": [
+      {
+        "name": "Fortitude",
+        "ability": "Constitution",
+        "proficiency": "E",
+        "fromItems": 0
+      },
+      {
+        "name": "Reflex",
+        "ability": "Dexterity",
+        "proficiency": "E",
+        "fromItems": 0
+      },
+      {
+        "name": "Will",
+        "ability": "Wisdom",
+        "proficiency": "E",
+        "fromItems": 0
+      }
+    ]
   },
   "feats": {
     "ancestry": [

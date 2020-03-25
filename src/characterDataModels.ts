@@ -108,12 +108,33 @@ export class ArmorClass {
   }
 }
 
+export class SavingThrow {
+  public name: string
+  public ability: string
+  public proficiency: string
+  public fromItems: number
+
+  public constructor(
+    name: string,
+    ability: string,
+    proficiency: string,
+    fromItems: number
+  ) {
+    this.name = name
+    this.ability = ability
+    this.proficiency = proficiency
+    this.fromItems = fromItems
+  }
+}
+
 export class Defense {
   public health: Health
   public armorClass: ArmorClass
+  public savingThrows: Array<SavingThrow>
 
-  public constructor(health: Health, armorClass: ArmorClass) {
+  public constructor(health: Health, armorClass: ArmorClass, savingThrows: Array<SavingThrow>) {
     this.health = health
     this.armorClass = armorClass
+    this.savingThrows = savingThrows
   }
 }

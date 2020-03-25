@@ -1,10 +1,7 @@
 import React from 'react'
 import {
-  // makeStyles,
-  // createStyles,
   Container,
   Paper,
-  // Theme,
   Table,
   TableBody,
   TableCell,
@@ -13,14 +10,23 @@ import {
   TableRow
 } from '@material-ui/core'
 import './App.css'
-import { Ability, Attack, Skill } from './characterDataModels'
-import { getAbilityMod, formatMod, calculateSkillMod, calculateAttackMod, calculateArmorClass } from './rules'
+import {
+  Ability,
+  Attack,
+  Skill,
+  SavingThrow
+} from './characterDataModels'
+import {
+  getAbilityMod,
+  formatMod,
+  calculateSkillMod,
+  calculateSavingThrow,
+  calculateAttackMod,
+  calculateArmorClass
+} from './rules'
 import * as characterData from './data.json'
 
-// const useStyles = makeStyles((theme: Theme) => createStyles({}))
-
 const App = () => {
-  // const classes = useStyles()
   return (
     <div>
       <Container>
@@ -238,7 +244,33 @@ const App = () => {
               </TableBody>
             </Table>
           </TableContainer>
-          {/* TODO saves */}
+          <h4>Saving Throws</h4>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Ability</TableCell>
+                  <TableCell>Proficiency</TableCell>
+                  <TableCell>Item bonus</TableCell>
+                  <TableCell><strong>Total</strong></TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  characterData.defense.savingThrows.map((save: SavingThrow) => (
+                    <TableRow key={save.name}>
+                      <TableCell>{ save.name }</TableCell>
+                      <TableCell>{ save.ability }</TableCell>
+                      <TableCell>{ save.proficiency }</TableCell>
+                      <TableCell>{ save.fromItems }</TableCell>
+                      <TableCell>{ calculateSavingThrow(save, characterData.general.level, characterData.abilities) }</TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Paper>
         <Paper>
           <h3>Feats</h3>
