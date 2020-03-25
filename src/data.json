@@ -169,7 +169,7 @@
           "ability": "Strength",
           "damageType": "BPS",
           "other": 0,
-          "traits": "AFNU"
+          "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
       {
@@ -184,7 +184,7 @@
           "ability": "Strength",
           "damageType": "B",
           "other": 0,
-          "traits": "AFNU"
+          "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
       {
@@ -199,7 +199,7 @@
           "ability": "Strength",
           "damageType": "P",
           "other": 0,
-          "traits": "ABFNU(T)"
+          "traits": "Agile/Finesse/Nonlethal/Unarmed/Backstabber(/Trip)"
         }
       },
       {

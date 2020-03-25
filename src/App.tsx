@@ -7,7 +7,8 @@ import {
   TableCell,
   TableContainer,
   TableHead,
-  TableRow
+  TableRow,
+  Tooltip
 } from '@material-ui/core'
 import './App.css'
 import {
@@ -19,6 +20,7 @@ import {
 import {
   getAbilityMod,
   formatMod,
+  lookupAbilityScore,
   calculateSkillMod,
   calculateSavingThrow,
   calculateAttackMod,
@@ -161,12 +163,12 @@ const App = () => {
                   <TableCell>Proficiency</TableCell>
                   <TableCell>Attack ability</TableCell>
                   <TableCell>To hit item bonus</TableCell>
+                  <TableCell><strong>Attack Total</strong></TableCell>
                   <TableCell>Damage die</TableCell>
                   <TableCell>Damage ability</TableCell>
                   <TableCell>Damage type</TableCell>
                   <TableCell>Damage bonus</TableCell>
                   <TableCell>Traits</TableCell>
-                  <TableCell><strong>Attack</strong></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -175,14 +177,14 @@ const App = () => {
                     <TableRow key={attack.name}>
                       <TableCell>{ attack.name }</TableCell>
                       <TableCell>{ attack.toHit.proficiency }</TableCell>
-                      <TableCell>{ attack.toHit.ability }</TableCell>
+                      <TableCell>{ attack.toHit.ability } ({ attack.toHit.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.toHit.ability)) : '' })</TableCell>
                       <TableCell>{ attack.toHit.fromItems }</TableCell>
+                      <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
                       <TableCell>{ attack.damage.die }</TableCell>
-                      <TableCell>{ attack.damage.ability }</TableCell>
+                      <TableCell>{ attack.damage.ability } ({ attack.damage.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.damage.ability)) : '' })</TableCell>
                       <TableCell>{ attack.damage.damageType }</TableCell>
                       <TableCell>{ attack.damage.other }</TableCell>
-                      <TableCell>{ attack.damage.traits }</TableCell>
-                      <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
+                      <TableCell><Tooltip title={ attack.damage.traits }><span>?</span></Tooltip></TableCell>
                     </TableRow>
                   ))
                 }
