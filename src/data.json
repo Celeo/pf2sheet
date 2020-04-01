@@ -1,6 +1,6 @@
 {
   "general": {
-    "level": 2,
+    "level": 3,
     "experience": 0,
     "name": "Elas Dorr",
     "playerName": "Matt",
@@ -16,7 +16,7 @@
       "Dwarvish",
       "Gnomish"
     ],
-    "speed": 25,
+    "speed": 35,
     "heroPoints": 2
   },
   "abilities": [
@@ -61,7 +61,7 @@
     {
       "name": "Athletics",
       "ability": "Strength",
-      "proficiency": "T",
+      "proficiency": "E",
       "fromItems": 0
     },
     {
@@ -280,7 +280,8 @@
       "Titan Wrestler"
     ],
     "general": [
-      "Toughness"
+      "Toughness",
+      "Cat Fall"
     ]
   },
   "gear": {
