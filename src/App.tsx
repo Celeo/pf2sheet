@@ -154,45 +154,6 @@ const App = () => {
           </TableContainer>
         </Paper>
         <Paper>
-          <h3>Attacks</h3>
-          <TableContainer>
-            <Table>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Name</TableCell>
-                  <TableCell>Proficiency</TableCell>
-                  <TableCell>Attack ability</TableCell>
-                  <TableCell>To hit item bonus</TableCell>
-                  <TableCell><strong>Attack Total</strong></TableCell>
-                  <TableCell>Damage die</TableCell>
-                  <TableCell>Damage ability</TableCell>
-                  <TableCell>Damage type</TableCell>
-                  <TableCell>Damage bonus</TableCell>
-                  <TableCell>Traits</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>
-                {
-                  characterData.offense.attacks.map((attack: Attack) => (
-                    <TableRow key={attack.name}>
-                      <TableCell>{ attack.name }</TableCell>
-                      <TableCell>{ attack.toHit.proficiency }</TableCell>
-                      <TableCell>{ attack.toHit.ability } ({ attack.toHit.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.toHit.ability)) : '' })</TableCell>
-                      <TableCell>{ attack.toHit.fromItems }</TableCell>
-                      <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
-                      <TableCell>{ attack.damage.die }</TableCell>
-                      <TableCell>{ attack.damage.ability } ({ attack.damage.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.damage.ability)) : '' })</TableCell>
-                      <TableCell>{ attack.damage.damageType }</TableCell>
-                      <TableCell>{ attack.damage.other }</TableCell>
-                      <TableCell><Tooltip title={ attack.damage.traits }><span>?</span></Tooltip></TableCell>
-                    </TableRow>
-                  ))
-                }
-              </TableBody>
-            </Table>
-          </TableContainer>
-        </Paper>
-        <Paper>
           <h3>Defense</h3>
           <h4>Health</h4>
           <TableContainer>
@@ -324,6 +285,45 @@ const App = () => {
           <ul>
             { characterData.gear.items.map((item: string) => <li key={item}>{ item }</li>) }
           </ul>
+        </Paper>
+        <Paper>
+          <h3>Attacks</h3>
+          <TableContainer>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Proficiency</TableCell>
+                  <TableCell>Attack ability</TableCell>
+                  <TableCell>To hit item bonus</TableCell>
+                  <TableCell><strong>Attack Total</strong></TableCell>
+                  <TableCell>Damage die</TableCell>
+                  <TableCell>Damage ability</TableCell>
+                  <TableCell>Damage type</TableCell>
+                  <TableCell>Damage bonus</TableCell>
+                  <TableCell>Traits</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  characterData.offense.attacks.map((attack: Attack) => (
+                    <TableRow key={attack.name}>
+                      <TableCell>{ attack.name }</TableCell>
+                      <TableCell>{ attack.toHit.proficiency }</TableCell>
+                      <TableCell>{ attack.toHit.ability } ({ attack.toHit.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.toHit.ability)) : '' })</TableCell>
+                      <TableCell>{ attack.toHit.fromItems }</TableCell>
+                      <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
+                      <TableCell>{ attack.damage.die }</TableCell>
+                      <TableCell>{ attack.damage.ability } ({ attack.damage.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.damage.ability)) : '' })</TableCell>
+                      <TableCell>{ attack.damage.damageType }</TableCell>
+                      <TableCell>{ attack.damage.other }</TableCell>
+                      <TableCell><Tooltip title={ attack.damage.traits }><span>?</span></Tooltip></TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
+            </Table>
+          </TableContainer>
         </Paper>
       </Box>
     </div>
