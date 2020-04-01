@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  Grid,
+  Box,
   Paper,
   Table,
   TableBody,
@@ -31,7 +31,7 @@ import * as characterData from './data.json'
 const App = () => {
   return (
     <div>
-      <Grid container>
+      <Box display="flex" flexWrap="wrap">
         <Paper>
           <h3>General</h3>
           <TableContainer>
@@ -325,7 +325,7 @@ const App = () => {
             { characterData.gear.items.map((item: string) => <li key={item}>{ item }</li>) }
           </ul>
         </Paper>
-      </Grid>
+      </Box>
     </div>
   )
 }
