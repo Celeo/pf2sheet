@@ -9,7 +9,7 @@
     "class": "Monk",
     "alignment": "N",
     "deity": "-",
-    "age": 30,
+    "age": 25,
     "gender": "M",
     "languages": [
       "Common",
@@ -156,6 +156,7 @@
     }
   ],
   "offense": {
+    "classDC": 15,
     "attacks": [
       {
         "name": "Unarmed",
@@ -236,8 +237,8 @@
   },
   "defense": {
     "health": {
-      "max": 34,
-      "current": 34,
+      "max": 47,
+      "current": 47,
       "temporary": 0
     },
     "armorClass": {

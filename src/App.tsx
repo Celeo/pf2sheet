@@ -324,6 +324,7 @@ const App = () => {
               </TableBody>
             </Table>
           </TableContainer>
+          <h4>Class DC: { characterData.offense.classDC }</h4>
         </Paper>
       </Box>
     </div>
