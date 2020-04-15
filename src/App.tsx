@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Box,
+  Grid,
   Paper,
   Table,
   TableBody,
@@ -8,8 +9,10 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TextField,
   Tooltip
 } from '@material-ui/core'
+import { Autocomplete } from '@material-ui/lab'
 import './App.css'
 import {
   Ability,
@@ -24,13 +27,33 @@ import {
   calculateSkillMod,
   calculateSavingThrow,
   calculateAttackMod,
-  calculateArmorClass
+  calculateArmorClass,
+  allSearchableFields,
+  SearchableValue
 } from './rules'
 import * as characterData from './data.json'
 
 const App = () => {
+  const [searchValue, setSearchValue] = useState<SearchableValue | null>(null)
   return (
     <div>
+      <Box>
+        <Paper>
+          <Grid container spacing={3}>
+            <Grid item xs={8}>
+              <Autocomplete
+                options={allSearchableFields}
+                getOptionLabel={(option: SearchableValue) => option.name}
+                renderInput={(params: any) => <TextField {...params} label="Search for value" variant="outlined" />}
+                onChange={(_: any, value: SearchableValue | null) => setSearchValue(value)}
+              />
+            </Grid>
+            <Grid item xs={2}>
+              { searchValue && <p><strong>{ searchValue.getValue(characterData) }</strong></p> }
+            </Grid>
+          </Grid>
+        </Paper>
+      </Box>
       <Box display="flex" flexWrap="wrap">
         <Paper>
           <h3>General</h3>
