@@ -93,127 +93,54 @@ export class SearchableValue {
   }
 }
 
-export const allSearchableFields = [
-  new SearchableValue('Strength', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Strength')
+const createSF_Abilities = (): Array<SearchableValue> => {
+  const abilities = [
+    'Strength',
+    'Dexterity',
+    'Constitution',
+    'Intelligence',
+    'Wisdom',
+    'Charisma'
+  ]
+  return abilities.map((abilityName) => new SearchableValue(abilityName, (characterData: any) => {
+    const score = lookupAbilityScore(characterData.default.abilities, abilityName)
     return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
-  new SearchableValue('Dexterity', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Dexterity')
-    return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
-  new SearchableValue('Constitution', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Constitution')
-    return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
-  new SearchableValue('Intelligence', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Intelligence')
-    return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
-  new SearchableValue('Wisdom', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Wisdom')
-    return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
-  new SearchableValue('Charisma', (characterData: any) => {
-    const score = lookupAbilityScore(characterData.default.abilities, 'Charisma')
-    return `Score: ${score}, mod ${getAbilityMod(score)}`
-  }),
+  }))
+}
 
-  new SearchableValue('Acrobatics', (characterData: any) => {
+const createSF_Skills = (): Array<SearchableValue> => {
+  const skills = [
+    'Acrobatics',
+    'Arcana',
+    'Athletics',
+    'Crafting',
+    'Deception',
+    'Diplomacy',
+    'Intimidation',
+    'Lore',
+    'Medicine',
+    'Nature',
+    'Occultism',
+    'Perception',
+    'Performance',
+    'Religion',
+    'Society',
+    'Stealth',
+    'Survival',
+    'Thievery',
+    'Health'
+  ]
+  return skills.map((skillName) => new SearchableValue(skillName, (characterData: any) => {
     const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Acrobatics')[0]
+    const skill = data.skills.filter((skill: Skill) => skill.name === skillName)[0]
     return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Arcana', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Arcana')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Athletics', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Athletics')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Crafting', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Crafting')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Deception', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Deception')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Diplomacy', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Diplomacy')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Intimidation', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Intimidation')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Lore', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Lore')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Medicine', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Medicine')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Nature', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Nature')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Occultism', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Occultism')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Perception', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Perception')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Performance', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Performance')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Religion', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Religion')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Society', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Society')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Stealth', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Stealth')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Survival', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Survival')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Thievery', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Thievery')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
-  new SearchableValue('Health', (characterData: any) => {
-    const data = characterData.default
-    const skill = data.skills.filter((skill: Skill) => skill.name === 'Health')[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
-  }),
+  }))
+}
+
+export const allSearchableFields = [
+  ...createSF_Abilities(),
+
+  ...createSF_Skills(),
 
   new SearchableValue('Armor', (characterData: any) => {
     const data = characterData.default
