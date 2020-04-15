@@ -133,7 +133,7 @@ const createSF_Skills = (): Array<SearchableValue> => {
   return skills.map((skillName) => new SearchableValue(skillName, (characterData: any) => {
     const data = characterData.default
     const skill = data.skills.filter((skill: Skill) => skill.name === skillName)[0]
-    return `Skill mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
+    return `Mod ${formatMod(calculateSkillMod(skill, data.general.level, data.abilities))}`
   }))
 }
 
