@@ -93,10 +93,6 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
                 <TableCell>Speed</TableCell>
                 <TableCell>{ characterData.general.speed }</TableCell>
               </TableRow>
-              <TableRow>
-                <TableCell>Hero points</TableCell>
-                <TableCell>{ characterData.general.heroPoints }</TableCell>
-              </TableRow>
             </TableBody>
           </Table>
         </TableContainer>

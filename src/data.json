@@ -1,6 +1,6 @@
 {
   "general": {
-    "level": 3,
+    "level": 4,
     "experience": 0,
     "name": "Elas Dorr",
     "playerName": "Matt",
@@ -16,8 +16,7 @@
       "Dwarvish",
       "Gnomish"
     ],
-    "speed": 35,
-    "heroPoints": 2
+    "speed": 35
   },
   "abilities": [
     {
@@ -237,8 +236,8 @@
   },
   "defense": {
     "health": {
-      "max": 47,
-      "current": 47,
+      "max": 60,
+      "current": 60,
       "temporary": 0
     },
     "armorClass": {
@@ -274,11 +273,13 @@
     ],
     "class": [
       "Crane Stance",
-      "Wolf Stance"
+      "Wolf Stance",
+      "Stand Still"
     ],
     "skill": [
       "Pickpocket",
-      "Titan Wrestler"
+      "Titan Wrestler",
+      "Assurance: Athletics"
     ],
     "general": [
       "Toughness",
