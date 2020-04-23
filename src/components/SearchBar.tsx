@@ -5,10 +5,10 @@ import {
   List,
   ListItem,
   ListItemText,
-  Paper,
   TextField,
 } from '@material-ui/core'
 import { Autocomplete } from '@material-ui/lab'
+import { StyledPaper } from './common'
 import { allSearchableFields, SearchableValue } from '../rules'
 
 interface SearchBarProps {
@@ -42,7 +42,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
   render () {
     return (
       <Box>
-        <Paper>
+        <StyledPaper>
           <Grid container>
             <Grid item xs={12}>
               <Autocomplete
@@ -66,7 +66,7 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
               </List>
             </Grid>
           </Grid>
-        </Paper>
+        </StyledPaper>
       </Box>
     )
   }

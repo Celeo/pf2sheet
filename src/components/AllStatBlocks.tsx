@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Box,
-  Paper,
   Table,
   TableBody,
   TableCell,
@@ -10,6 +9,7 @@ import {
   TableRow,
   Tooltip
 } from '@material-ui/core'
+import { StyledPaper, StyledTableCell } from './common'
 import {
   Ability,
   Attack,
@@ -34,7 +34,7 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
   characterData = characterData.default
   return (
     <Box display="flex" flexWrap="wrap">
-      <Paper>
+      <StyledPaper>
         <h3>General</h3>
         <TableContainer>
           <Table>
@@ -46,128 +46,128 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>{ characterData.general.name }</TableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell>{ characterData.general.name }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Player name</TableCell>
-                <TableCell>{ characterData.general.playerName }</TableCell>
+                <StyledTableCell>Player name</StyledTableCell>
+                <StyledTableCell>{ characterData.general.playerName }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Level (xp)</TableCell>
-                <TableCell>{ characterData.general.level } ({ characterData.general.experience })</TableCell>
+                <StyledTableCell>Level (xp)</StyledTableCell>
+                <StyledTableCell>{ characterData.general.level } ({ characterData.general.experience })</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Ancestry</TableCell>
-                <TableCell>{ characterData.general.ancestry }</TableCell>
+                <StyledTableCell>Ancestry</StyledTableCell>
+                <StyledTableCell>{ characterData.general.ancestry }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Background</TableCell>
-                <TableCell>{ characterData.general.background }</TableCell>
+                <StyledTableCell>Background</StyledTableCell>
+                <StyledTableCell>{ characterData.general.background }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Class</TableCell>
-                <TableCell>{ characterData.general.class }</TableCell>
+                <StyledTableCell>Class</StyledTableCell>
+                <StyledTableCell>{ characterData.general.class }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Alignment</TableCell>
-                <TableCell>{ characterData.general.alignment }</TableCell>
+                <StyledTableCell>Alignment</StyledTableCell>
+                <StyledTableCell>{ characterData.general.alignment }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Deity</TableCell>
-                <TableCell>{ characterData.general.deity }</TableCell>
+                <StyledTableCell>Deity</StyledTableCell>
+                <StyledTableCell>{ characterData.general.deity }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Age</TableCell>
-                <TableCell>{ characterData.general.age }</TableCell>
+                <StyledTableCell>Age</StyledTableCell>
+                <StyledTableCell>{ characterData.general.age }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Gender</TableCell>
-                <TableCell>{ characterData.general.gender }</TableCell>
+                <StyledTableCell>Gender</StyledTableCell>
+                <StyledTableCell>{ characterData.general.gender }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Languages</TableCell>
-                <TableCell>{ characterData.general.languages.join(', ') }</TableCell>
+                <StyledTableCell>Languages</StyledTableCell>
+                <StyledTableCell>{ characterData.general.languages.join(', ') }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Speed</TableCell>
-                <TableCell>{ characterData.general.speed }</TableCell>
+                <StyledTableCell>Speed</StyledTableCell>
+                <StyledTableCell>{ characterData.general.speed }</StyledTableCell>
               </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Abilities</h3>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Mod</TableCell>
-                <TableCell>Score</TableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell>Mod</StyledTableCell>
+                <StyledTableCell>Score</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {
                 characterData.abilities.map((ability: Ability) => (
                   <TableRow key={ability.name}>
-                    <TableCell>{ ability.name }</TableCell>
-                    <TableCell>{ formatMod(getAbilityMod(ability.score)) }</TableCell>
-                    <TableCell>{ ability.score }</TableCell>
+                    <StyledTableCell>{ ability.name }</StyledTableCell>
+                    <StyledTableCell>{ formatMod(getAbilityMod(ability.score)) }</StyledTableCell>
+                    <StyledTableCell>{ ability.score }</StyledTableCell>
                   </TableRow>
                 ))
               }
             </TableBody>
           </Table>
         </TableContainer>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Skills</h3>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Attribute</TableCell>
-                <TableCell>Proficiency</TableCell>
-                <TableCell>From items</TableCell>
-                <TableCell><strong>Total</strong></TableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell>Attribute</StyledTableCell>
+                <StyledTableCell>Proficiency</StyledTableCell>
+                <StyledTableCell>From items</StyledTableCell>
+                <StyledTableCell><strong>Total</strong></StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
           {
             characterData.skills.map((skill: Skill) => (
               <TableRow key={skill.name}>
-                <TableCell>{ skill.name }</TableCell>
-                <TableCell>{ skill.ability }</TableCell>
-                <TableCell>{ skill.proficiency }</TableCell>
-                <TableCell>{ skill.fromItems }</TableCell>
-                <TableCell><strong>{ calculateSkillMod(skill, characterData.general.level, characterData.abilities) }</strong></TableCell>
+                <StyledTableCell>{ skill.name }</StyledTableCell>
+                <StyledTableCell>{ skill.ability }</StyledTableCell>
+                <StyledTableCell>{ skill.proficiency }</StyledTableCell>
+                <StyledTableCell>{ skill.fromItems }</StyledTableCell>
+                <StyledTableCell><strong>{ calculateSkillMod(skill, characterData.general.level, characterData.abilities) }</strong></StyledTableCell>
               </TableRow>
             ))
           }
             </TableBody>
           </Table>
         </TableContainer>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Defense</h3>
         <h4>Health</h4>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Max</TableCell>
-                <TableCell>Current</TableCell>
-                <TableCell>Temp</TableCell>
+                <StyledTableCell>Max</StyledTableCell>
+                <StyledTableCell>Current</StyledTableCell>
+                <StyledTableCell>Temp</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>{ characterData.defense.health.max }</TableCell>
-                <TableCell>{ characterData.defense.health.current }</TableCell>
-                <TableCell>{ characterData.defense.health.temporary }</TableCell>
+                <StyledTableCell>{ characterData.defense.health.max }</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.health.current }</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.health.temporary }</StyledTableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -183,24 +183,24 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>Wearing</TableCell>
-                <TableCell>{ characterData.defense.armorClass.wearing }</TableCell>
+                <StyledTableCell>Wearing</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.armorClass.wearing }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Dex. cap</TableCell>
-                <TableCell>{ characterData.defense.armorClass.dexterityCap }</TableCell>
+                <StyledTableCell>Dex. cap</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.armorClass.dexterityCap }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Proficiency</TableCell>
-                <TableCell>{ characterData.defense.armorClass.proficiency }</TableCell>
+                <StyledTableCell>Proficiency</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.armorClass.proficiency }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Item bonus</TableCell>
-                <TableCell>{ characterData.defense.armorClass.fromItems }</TableCell>
+                <StyledTableCell>Item bonus</StyledTableCell>
+                <StyledTableCell>{ characterData.defense.armorClass.fromItems }</StyledTableCell>
               </TableRow>
               <TableRow>
-                <TableCell>Total</TableCell>
-                <TableCell><strong>{ calculateArmorClass(characterData.general.level, characterData.abilities, characterData.defense.armorClass) }</strong></TableCell>
+                <StyledTableCell>Total</StyledTableCell>
+                <StyledTableCell><strong>{ calculateArmorClass(characterData.general.level, characterData.abilities, characterData.defense.armorClass) }</strong></StyledTableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -210,30 +210,30 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Ability</TableCell>
-                <TableCell>Proficiency</TableCell>
-                <TableCell>Item bonus</TableCell>
-                <TableCell><strong>Total</strong></TableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell>Ability</StyledTableCell>
+                <StyledTableCell>Proficiency</StyledTableCell>
+                <StyledTableCell>Item bonus</StyledTableCell>
+                <StyledTableCell><strong>Total</strong></StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {
                 characterData.defense.savingThrows.map((save: SavingThrow) => (
                   <TableRow key={save.name}>
-                    <TableCell>{ save.name }</TableCell>
-                    <TableCell>{ save.ability }</TableCell>
-                    <TableCell>{ save.proficiency }</TableCell>
-                    <TableCell>{ save.fromItems }</TableCell>
-                    <TableCell>{ calculateSavingThrow(save, characterData.general.level, characterData.abilities) }</TableCell>
+                    <StyledTableCell>{ save.name }</StyledTableCell>
+                    <StyledTableCell>{ save.ability }</StyledTableCell>
+                    <StyledTableCell>{ save.proficiency }</StyledTableCell>
+                    <StyledTableCell>{ save.fromItems }</StyledTableCell>
+                    <StyledTableCell>{ calculateSavingThrow(save, characterData.general.level, characterData.abilities) }</StyledTableCell>
                   </TableRow>
                 ))
               }
             </TableBody>
           </Table>
         </TableContainer>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Feats</h3>
         <h4>Ancestry</h4>
         <ul>
@@ -251,31 +251,31 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
         <ul>
           { characterData.feats.general.map((feat: string) => <li key={feat}>{ feat }</li>) }
         </ul>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Class Features</h3>
         <ul>
           { characterData.classFeatures.map((feat: string) => <li key={feat}>{ feat }</li>) }
         </ul>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Gear</h3>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>PP</TableCell>
-                <TableCell>GP</TableCell>
-                <TableCell>SP</TableCell>
-                <TableCell>CP</TableCell>
+                <StyledTableCell>PP</StyledTableCell>
+                <StyledTableCell>GP</StyledTableCell>
+                <StyledTableCell>SP</StyledTableCell>
+                <StyledTableCell>CP</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               <TableRow>
-                <TableCell>{ characterData.gear.money.pp }</TableCell>
-                <TableCell>{ characterData.gear.money.gp }</TableCell>
-                <TableCell>{ characterData.gear.money.sp }</TableCell>
-                <TableCell>{ characterData.gear.money.cp }</TableCell>
+                <StyledTableCell>{ characterData.gear.money.pp }</StyledTableCell>
+                <StyledTableCell>{ characterData.gear.money.gp }</StyledTableCell>
+                <StyledTableCell>{ characterData.gear.money.sp }</StyledTableCell>
+                <StyledTableCell>{ characterData.gear.money.cp }</StyledTableCell>
               </TableRow>
             </TableBody>
           </Table>
@@ -283,39 +283,39 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
         <ul>
           { characterData.gear.items.map((item: string) => <li key={item}>{ item }</li>) }
         </ul>
-      </Paper>
-      <Paper>
+      </StyledPaper>
+      <StyledPaper>
         <h3>Attacks</h3>
         <TableContainer>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Proficiency</TableCell>
-                <TableCell>Attack ability</TableCell>
-                <TableCell>To hit item bonus</TableCell>
-                <TableCell><strong>Attack Total</strong></TableCell>
-                <TableCell>Damage die</TableCell>
-                <TableCell>Damage ability</TableCell>
-                <TableCell>Damage type</TableCell>
-                <TableCell>Damage bonus</TableCell>
-                <TableCell>Traits</TableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell>Proficiency</StyledTableCell>
+                <StyledTableCell>Attack ability</StyledTableCell>
+                <StyledTableCell>To hit item bonus</StyledTableCell>
+                <StyledTableCell><strong>Attack Total</strong></StyledTableCell>
+                <StyledTableCell>Damage die</StyledTableCell>
+                <StyledTableCell>Damage ability</StyledTableCell>
+                <StyledTableCell>Damage type</StyledTableCell>
+                <StyledTableCell>Damage bonus</StyledTableCell>
+                <StyledTableCell>Traits</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {
                 characterData.offense.attacks.map((attack: Attack) => (
                   <TableRow key={attack.name}>
-                    <TableCell>{ attack.name }</TableCell>
-                    <TableCell>{ attack.toHit.proficiency }</TableCell>
-                    <TableCell>{ attack.toHit.ability } ({ attack.toHit.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.toHit.ability)) : '' })</TableCell>
-                    <TableCell>{ attack.toHit.fromItems }</TableCell>
-                    <TableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></TableCell>
-                    <TableCell>{ attack.damage.die }</TableCell>
-                    <TableCell>{ attack.damage.ability } ({ attack.damage.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.damage.ability)) : '' })</TableCell>
-                    <TableCell>{ attack.damage.damageType }</TableCell>
-                    <TableCell>{ attack.damage.other }</TableCell>
-                    <TableCell><Tooltip title={ attack.damage.traits }><span>?</span></Tooltip></TableCell>
+                    <StyledTableCell>{ attack.name }</StyledTableCell>
+                    <StyledTableCell>{ attack.toHit.proficiency }</StyledTableCell>
+                    <StyledTableCell>{ attack.toHit.ability } ({ attack.toHit.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.toHit.ability)) : '' })</StyledTableCell>
+                    <StyledTableCell>{ attack.toHit.fromItems }</StyledTableCell>
+                    <StyledTableCell><strong>{ calculateAttackMod(attack, characterData.general.level, characterData.abilities) }</strong></StyledTableCell>
+                    <StyledTableCell>{ attack.damage.die }</StyledTableCell>
+                    <StyledTableCell>{ attack.damage.ability } ({ attack.damage.ability !== '' ? getAbilityMod(lookupAbilityScore(characterData.abilities, attack.damage.ability)) : '' })</StyledTableCell>
+                    <StyledTableCell>{ attack.damage.damageType }</StyledTableCell>
+                    <StyledTableCell>{ attack.damage.other }</StyledTableCell>
+                    <StyledTableCell><Tooltip title={ attack.damage.traits }><span>?</span></Tooltip></StyledTableCell>
                   </TableRow>
                 ))
               }
@@ -323,7 +323,7 @@ export const AllStatBlocks = ({ characterData }: AllStatBlocksProps) => {
           </Table>
         </TableContainer>
         <h4>Class DC: { characterData.offense.classDC }</h4>
-      </Paper>
+      </StyledPaper>
     </Box>
   )
 }
