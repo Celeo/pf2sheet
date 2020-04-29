@@ -162,13 +162,13 @@
         "toHit": {
           "proficiency": "T",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d6",
           "ability": "Strength",
           "damageType": "BPS",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
@@ -177,13 +177,13 @@
         "toHit": {
           "proficiency": "T",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d6",
           "ability": "Strength",
           "damageType": "B",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
@@ -192,13 +192,13 @@
         "toHit": {
           "proficiency": "T",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d8",
           "ability": "Strength",
           "damageType": "P",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed/Backstabber(/Trip)"
         }
       },
@@ -292,11 +292,12 @@
       "Climbing Kit",
       "Clothing (Explorer's)",
       "Clothing (Winter)",
-      "Thieves' Tools"
+      "Thieves' Tools",
+      "Knuckles of Might Blows (+1)"
     ],
     "money": {
       "pp": 0,
-      "gp": 93,
+      "gp": 58,
       "sp": 0,
       "cp": 6
     }

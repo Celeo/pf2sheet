@@ -7,7 +7,7 @@ import * as characterData from './data.json'
 const App = () => {
   return (
     <div>
-      <SearchBar characterData={characterData} />
+      {/* <SearchBar characterData={characterData} /> */}
       <AllStatBlocks characterData={characterData} />
     </div>
   )
