@@ -1,6 +1,6 @@
 import React from 'react'
 import { AllStatBlocks } from './components/AllStatBlocks'
-import { SearchBar } from './components/SearchBar'
+// import { SearchBar } from './components/SearchBar'
 import './App.css'
 import * as characterData from './data.json'
 
