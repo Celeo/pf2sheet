@@ -1,4 +1,4 @@
-import { Ability, Attack, Skill, ArmorClass, SavingThrow } from './characterDataModels'
+import { Ability, Attack, Skill, ArmorClass, SavingThrow } from './models'
 
 // TODO use this
 export enum ProficiencyType {

@@ -15,7 +15,7 @@ import {
   Attack,
   Skill,
   SavingThrow
-} from '../characterDataModels'
+} from '../models'
 import {
   getAbilityMod,
   formatMod,
