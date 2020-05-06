@@ -68,6 +68,11 @@
     "webpack-manifest-plugin": "2.2.0",
     "workbox-webpack-plugin": "4.3.1"
   },
+  "devDependencies": {
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^9.0.1",
+    "surge": "^0.21.3"
+  },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
@@ -76,13 +81,7 @@
     "lint:fix": "eslint --fix src/**/*.{ts,tsx}"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "semi": [
-        "error",
-        "never"
-      ]
-    }
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -151,7 +150,10 @@
       "react-app"
     ]
   },
-  "devDependencies": {
-    "surge": "^0.21.3"
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
   }
 }
