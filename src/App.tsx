@@ -1,8 +1,8 @@
-import React from 'react'
-import { AllStatBlocks } from './components/AllStatBlocks'
+import React from 'react';
+import { AllStatBlocks } from './components/AllStatBlocks';
 // import { SearchBar } from './components/SearchBar'
-import './App.css'
-import * as characterData from './data.json'
+import './App.css';
+import * as characterData from './data.json';
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
       {/* <SearchBar characterData={characterData} /> */}
       <AllStatBlocks characterData={characterData} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
