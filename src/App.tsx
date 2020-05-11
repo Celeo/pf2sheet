@@ -1,16 +1,75 @@
 import React from 'react';
-import { AllStatBlocks } from './components/AllStatBlocks';
-// import { SearchBar } from './components/SearchBar'
+import {
+  Switch,
+  Route,
+  Link as RouterLink,
+  withRouter,
+} from 'react-router-dom';
+import { Box, Button } from '@material-ui/core';
 import './App.css';
+
+import { SearchBar } from './components/SearchBar';
+import SectionOverview from './components/SectionOverview';
+import SectionSkills from './components/SectionSkills';
+import SectionOffense from './components/SectionOffense';
+import SectionDefense from './components/SectionDefense';
+import SectionGear from './components/SectionGear';
+
 import * as characterData from './data.json';
 
-const App = () => {
+interface AppProps {
+  location: {
+    pathname: string;
+  };
+}
+
+const App = (props: AppProps) => {
   return (
     <div>
-      {/* <SearchBar characterData={characterData} /> */}
-      <AllStatBlocks characterData={characterData} />
+      <Box display="flex" style={{ justifyContent: 'space-evenly' }}>
+        {['overview', 'skills', 'offense', 'defense', 'gear'].map((e) => (
+          <Button
+            key={e}
+            component={RouterLink}
+            to={'/' + e.toLowerCase()}
+            variant="contained"
+            color={
+              props.location.pathname === '/' + e.toLowerCase()
+                ? 'primary'
+                : 'default'
+            }
+            style={{ width: '18%' }}
+          >
+            {e}
+          </Button>
+        ))}
+      </Box>
+      <hr />
+      <Switch>
+        <Route path="/search">
+          <SearchBar characterData={characterData} />
+        </Route>
+        <Route path="/overview">
+          <SectionOverview characterData={characterData} />
+        </Route>
+        <Route path="/skills">
+          <SectionSkills characterData={characterData} />
+        </Route>
+        <Route path="/offense">
+          <SectionOffense characterData={characterData} />
+        </Route>
+        <Route path="/defense">
+          <SectionDefense characterData={characterData} />
+        </Route>
+        <Route path="/gear">
+          <SectionGear characterData={characterData} />
+        </Route>
+        <Route path="/">
+          <p>Select a section</p>
+        </Route>
+      </Switch>
     </div>
   );
 };
 
-export default App;
+export default withRouter(App);
