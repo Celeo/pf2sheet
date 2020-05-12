@@ -188,21 +188,6 @@
         }
       },
       {
-        "name": "Wolf Jaw",
-        "toHit": {
-          "proficiency": "E",
-          "ability": "Dexterity",
-          "fromItems": 1
-        },
-        "damage": {
-          "die": "2d8",
-          "ability": "Strength",
-          "damageType": "P",
-          "other": 1,
-          "traits": "Agile/Finesse/Nonlethal/Unarmed/Backstabber(/Trip)"
-        }
-      },
-      {
         "name": "Dart",
         "toHit": {
           "proficiency": "E",
@@ -272,7 +257,7 @@
     ],
     "class": [
       "Crane Stance",
-      "Wolf Stance",
+      "Ki Strike",
       "Stand Still"
     ],
     "skill": [
