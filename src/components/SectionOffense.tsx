@@ -13,6 +13,7 @@ import {
   getAbilityMod,
   lookupAbilityScore,
   calculateAttackMod,
+  formatMod,
 } from '../rules';
 
 interface SectionProps {
@@ -62,10 +63,12 @@ export default (props: SectionProps) => {
                 <StyledTableCell>{attack.toHit.fromItems}</StyledTableCell>
                 <StyledTableCell>
                   <strong>
-                    {calculateAttackMod(
-                      attack,
-                      characterData.general.level,
-                      characterData.abilities
+                    {formatMod(
+                      calculateAttackMod(
+                        attack,
+                        characterData.general.level,
+                        characterData.abilities
+                      )
                     )}
                   </strong>
                 </StyledTableCell>
@@ -86,7 +89,7 @@ export default (props: SectionProps) => {
                 <StyledTableCell>{attack.damage.other}</StyledTableCell>
                 <StyledTableCell>
                   <Tooltip title={attack.damage.traits}>
-                    <span>?</span>
+                    <span style={{ fontSize: '80%' }}>Hover over</span>
                   </Tooltip>
                 </StyledTableCell>
               </TableRow>

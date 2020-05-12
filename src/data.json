@@ -165,7 +165,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d6",
+          "die": "2d6",
           "ability": "Strength",
           "damageType": "BPS",
           "other": 1,
@@ -180,7 +180,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d6",
+          "die": "2d6",
           "ability": "Strength",
           "damageType": "B",
           "other": 1,
@@ -195,7 +195,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d8",
+          "die": "2d8",
           "ability": "Strength",
           "damageType": "P",
           "other": 1,
