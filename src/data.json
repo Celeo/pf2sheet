@@ -227,7 +227,7 @@
       "wearing": "Clothing (Explorer's)",
       "dexterityCap": 5,
       "proficiency": "E",
-      "fromItems": 0
+      "fromItems": 1
     },
     "savingThrows": [
       {
@@ -281,7 +281,7 @@
     ],
     "money": {
       "pp": 0,
-      "gp": 263,
+      "gp": 103,
       "sp": 0,
       "cp": 6
     }
