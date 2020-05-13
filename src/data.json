@@ -188,6 +188,21 @@
         }
       },
       {
+        "name": "Tiger Claw",
+        "toHit": {
+          "proficiency": "E",
+          "ability": "Dexterity",
+          "fromItems": 1
+        },
+        "damage": {
+          "die": "2d8",
+          "ability": "Strength",
+          "damageType": "S",
+          "other": 1,
+          "traits": "Agile/Finesse/Nonlethal/Unarmed/Step 10/Bleed on crit"
+        }
+      },
+      {
         "name": "Dart",
         "toHit": {
           "proficiency": "E",
@@ -200,21 +215,6 @@
           "damageType": "P",
           "other": 2,
           "traits": ""
-        }
-      },
-      {
-        "name": "Bo staff",
-        "toHit": {
-          "proficiency": "",
-          "ability": "Strength",
-          "fromItems": 0
-        },
-        "damage": {
-          "die": "1d6",
-          "ability": "Strength",
-          "damageType": "B",
-          "other": 0,
-          "traits": "Monk/Parry/Reach/Trip"
         }
       }
     ]
@@ -257,7 +257,7 @@
     ],
     "class": [
       "Crane Stance",
-      "Ki Strike",
+      "Tiger Stance",
       "Stand Still"
     ],
     "skill": [

@@ -3,7 +3,6 @@ import {
   Box,
   Table,
   TableBody,
-  TableCell,
   TableContainer,
   TableHead,
   TableRow,
@@ -25,8 +24,8 @@ export default (props: SectionProps) => {
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell />
-                <TableCell />
+                <StyledTableCell />
+                <StyledTableCell />
               </TableRow>
             </TableHead>
             <TableBody>

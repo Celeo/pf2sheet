@@ -73,24 +73,30 @@ export default (props: SectionProps) => {
                   </strong>
                 </StyledTableCell>
                 <StyledTableCell>{attack.damage.die}</StyledTableCell>
-                <StyledTableCell>
-                  {attack.damage.ability} (
-                  {attack.damage.ability !== ''
-                    ? getAbilityMod(
-                        lookupAbilityScore(
-                          characterData.abilities,
-                          attack.damage.ability
+                {attack.damage.ability ? (
+                  <StyledTableCell>
+                    {attack.damage.ability} (
+                    {attack.damage.ability !== ''
+                      ? getAbilityMod(
+                          lookupAbilityScore(
+                            characterData.abilities,
+                            attack.damage.ability
+                          )
                         )
-                      )
-                    : ''}
-                  )
-                </StyledTableCell>
+                      : ''}
+                    )
+                  </StyledTableCell>
+                ) : (
+                  <StyledTableCell />
+                )}
                 <StyledTableCell>{attack.damage.damageType}</StyledTableCell>
                 <StyledTableCell>{attack.damage.other}</StyledTableCell>
                 <StyledTableCell>
-                  <Tooltip title={attack.damage.traits}>
-                    <span style={{ fontSize: '80%' }}>Hover over</span>
-                  </Tooltip>
+                  {attack.damage.traits && (
+                    <Tooltip title={attack.damage.traits}>
+                      <span style={{ fontSize: '80%' }}>Hover over</span>
+                    </Tooltip>
+                  )}
                 </StyledTableCell>
               </TableRow>
             ))}
