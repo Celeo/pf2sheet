@@ -13,7 +13,7 @@
     "gender": "M",
     "languages": [
       "Common",
-      "Dwarvish",
+      "Halfling",
       "Gnomish"
     ],
     "speed": 35
@@ -88,7 +88,7 @@
       "fromItems": 0
     },
     {
-      "name": "Lore",
+      "name": "Lore (Birth city)",
       "ability": "Intelligence",
       "proficiency": "T",
       "fromItems": 0
@@ -274,7 +274,7 @@
     "items": [
       "Adventurer's Pack",
       "Climbing Kit",
-      "Clothing (Explorer's)",
+      "+1 Clothing (Explorer's)",
       "Clothing (Winter)",
       "Thieves' Tools",
       "+1 Striking Knuckles of Mighty Blows"
