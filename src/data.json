@@ -1,6 +1,6 @@
 {
   "general": {
-    "level": 5,
+    "level": 6,
     "experience": 0,
     "name": "Elas Dorr",
     "playerName": "Matt",
@@ -221,7 +221,7 @@
   },
   "defense": {
     "health": {
-      "max": 78
+      "max": 92
     },
     "armorClass": {
       "wearing": "Clothing (Explorer's)",
@@ -258,7 +258,8 @@
     "class": [
       "Crane Stance",
       "Tiger Stance",
-      "Stand Still"
+      "Stand Still",
+      "Crane Flutter"
     ],
     "skill": [
       "Pickpocket",
@@ -267,7 +268,8 @@
     ],
     "general": [
       "Toughness",
-      "Cat Fall"
+      "Cat Fall",
+      "Quick Jump"
     ]
   },
   "gear": {
