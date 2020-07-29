@@ -162,13 +162,13 @@
         "toHit": {
           "proficiency": "E",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d6",
           "ability": "Strength",
           "damageType": "BPS",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
@@ -177,13 +177,13 @@
         "toHit": {
           "proficiency": "E",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d6",
           "ability": "Strength",
           "damageType": "B",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed"
         }
       },
@@ -192,13 +192,13 @@
         "toHit": {
           "proficiency": "E",
           "ability": "Dexterity",
-          "fromItems": 0
+          "fromItems": 1
         },
         "damage": {
           "die": "1d8",
           "ability": "Strength",
           "damageType": "S",
-          "other": 0,
+          "other": 1,
           "traits": "Agile/Finesse/Nonlethal/Unarmed/Step 10/Bleed on crit"
         }
       },
@@ -279,11 +279,12 @@
       "+1 Clothing (Explorer's)",
       "Clothing (Winter)",
       "Thieves' Tools",
-      "Riding horse"
+      "Riding horse",
+      "Handwraps of Mighty Blows (+1)"
     ],
     "money": {
       "pp": 0,
-      "gp": 84,
+      "gp": 49,
       "sp": 5,
       "cp": 6
     }
