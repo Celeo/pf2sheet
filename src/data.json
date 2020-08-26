@@ -165,7 +165,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d6",
+          "die": "2d6",
           "ability": "Strength",
           "damageType": "BPS",
           "other": 1,
@@ -180,7 +180,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d6",
+          "die": "2d6",
           "ability": "Strength",
           "damageType": "B",
           "other": 1,
@@ -195,7 +195,7 @@
           "fromItems": 1
         },
         "damage": {
-          "die": "1d8",
+          "die": "2d8",
           "ability": "Strength",
           "damageType": "S",
           "other": 1,
@@ -280,12 +280,12 @@
       "Clothing (Winter)",
       "Thieves' Tools",
       "Riding horse",
-      "Handwraps of Mighty Blows (+1)",
+      "+1 Striking Handwraps of Mighty Blows",
       "4 sets of fine black gilded clothing"
     ],
     "money": {
       "pp": 0,
-      "gp": 49,
+      "gp": 16,
       "sp": 5,
       "cp": 6
     }
