@@ -71,6 +71,27 @@ export default (props: SectionProps) => {
                       )
                     )}
                   </strong>
+                  (
+                  <strong>
+                    {formatMod(
+                      calculateAttackMod(
+                        attack,
+                        characterData.general.level,
+                        characterData.abilities
+                      ) - 4
+                    )}
+                  </strong>
+                  /
+                  <strong>
+                    {formatMod(
+                      calculateAttackMod(
+                        attack,
+                        characterData.general.level,
+                        characterData.abilities
+                      ) - 8
+                    )}
+                  </strong>
+                  )
                 </StyledTableCell>
                 <StyledTableCell>{attack.damage.die}</StyledTableCell>
                 {attack.damage.ability ? (
