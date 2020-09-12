@@ -19,10 +19,10 @@ export default (props: SectionProps) => {
   const characterData = props.characterData.default;
   return (
     <Box display="flex" flexWrap="wrap">
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 1 }}>
         <h4>Max Health: {characterData.defense.health.max}</h4>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 2 }}>
         <h4>Armor Class</h4>
         <TableContainer>
           <Table>
@@ -73,7 +73,7 @@ export default (props: SectionProps) => {
           </Table>
         </TableContainer>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 2 }}>
         <h4>Saving Throws</h4>
         <TableContainer>
           <Table>

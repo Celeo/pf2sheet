@@ -19,7 +19,7 @@ export default (props: SectionProps) => {
   const characterData = props.characterData.default;
   return (
     <Box display="flex" flexWrap="wrap">
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 3 }}>
         <TableContainer>
           <Table>
             <TableHead>
@@ -96,7 +96,7 @@ export default (props: SectionProps) => {
           </Table>
         </TableContainer>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 3 }}>
         <TableContainer>
           <Table>
             <TableHead>
@@ -120,7 +120,7 @@ export default (props: SectionProps) => {
           </Table>
         </TableContainer>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 1 }}>
         <h3>Feats</h3>
         <h4>Ancestry</h4>
         <ul>
@@ -147,7 +147,7 @@ export default (props: SectionProps) => {
           ))}
         </ul>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 1 }}>
         <h3>Class Features</h3>
         <ul>
           {characterData.classFeatures.map((feat: string) => (

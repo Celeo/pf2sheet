@@ -17,7 +17,7 @@ export default (props: SectionProps) => {
   const characterData = props.characterData.default;
   return (
     <Box display="flex" flexWrap="wrap">
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 1 }}>
         <TableContainer>
           <Table>
             <TableHead>
@@ -39,7 +39,7 @@ export default (props: SectionProps) => {
           </Table>
         </TableContainer>
       </StyledPaper>
-      <StyledPaper>
+      <StyledPaper style={{ flexGrow: 4 }}>
         <ul>
           {characterData.gear.items.map((item: string) => (
             <li key={item}>{item}</li>
