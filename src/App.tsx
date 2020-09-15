@@ -11,8 +11,7 @@ import './App.css';
 import { SearchBar } from './components/SearchBar';
 import SectionOverview from './components/SectionOverview';
 import SectionSkills from './components/SectionSkills';
-import SectionOffense from './components/SectionOffense';
-import SectionDefense from './components/SectionDefense';
+import SectionCombat from './components/SectionCombat';
 import SectionGear from './components/SectionGear';
 
 import * as characterData from './data.json';
@@ -27,7 +26,7 @@ const App = (props: AppProps) => {
   return (
     <div>
       <Box display="flex" style={{ justifyContent: 'space-evenly' }}>
-        {['overview', 'skills', 'offense', 'defense', 'gear'].map((e) => (
+        {['overview', 'skills', 'combat', 'gear'].map((e) => (
           <Button
             key={e}
             component={RouterLink}
@@ -55,11 +54,8 @@ const App = (props: AppProps) => {
         <Route path="/skills">
           <SectionSkills characterData={characterData} />
         </Route>
-        <Route path="/offense">
-          <SectionOffense characterData={characterData} />
-        </Route>
-        <Route path="/defense">
-          <SectionDefense characterData={characterData} />
+        <Route path="/combat">
+          <SectionCombat characterData={characterData} />
         </Route>
         <Route path="/gear">
           <SectionGear characterData={characterData} />
