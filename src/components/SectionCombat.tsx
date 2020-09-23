@@ -43,8 +43,8 @@ export default (props: SectionProps) => {
                 </StyledTableCell>
                 <StyledTableCell>Damage die</StyledTableCell>
                 <StyledTableCell>Damage ability</StyledTableCell>
-                <StyledTableCell>Damage type</StyledTableCell>
                 <StyledTableCell>Damage bonus</StyledTableCell>
+                <StyledTableCell>Damage type</StyledTableCell>
                 <StyledTableCell>Traits</StyledTableCell>
               </TableRow>
             </TableHead>
@@ -115,8 +115,8 @@ export default (props: SectionProps) => {
                   ) : (
                     <StyledTableCell />
                   )}
-                  <StyledTableCell>{attack.damage.damageType}</StyledTableCell>
                   <StyledTableCell>{attack.damage.other}</StyledTableCell>
+                  <StyledTableCell>{attack.damage.damageType}</StyledTableCell>
                   <StyledTableCell>
                     {attack.damage.traits && (
                       <Tooltip title={attack.damage.traits}>
