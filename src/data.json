@@ -1,6 +1,6 @@
 {
   "general": {
-    "level": 6,
+    "level": 7,
     "experience": 0,
     "name": "Elas Dorr",
     "playerName": "Matt",
@@ -16,7 +16,7 @@
       "Halfling",
       "Gnomish"
     ],
-    "speed": 35
+    "speed": 40
   },
   "abilities": [
     {
@@ -48,7 +48,7 @@
     {
       "name": "Acrobatics",
       "ability": "Dexterity",
-      "proficiency": "E",
+      "proficiency": "M",
       "fromItems": 0
     },
     {
@@ -221,7 +221,7 @@
   },
   "defense": {
     "health": {
-      "max": 92
+      "max": 106
     },
     "armorClass": {
       "wearing": "Clothing (Explorer's)",
@@ -233,7 +233,7 @@
       {
         "name": "Fortitude",
         "ability": "Constitution",
-        "proficiency": "E",
+        "proficiency": "M",
         "fromItems": 0
       },
       {
@@ -270,7 +270,8 @@
     "general": [
       "Toughness",
       "Cat Fall",
-      "Quick Jump"
+      "Quick Jump",
+      "Steady Balance"
     ]
   },
   "gear": {
