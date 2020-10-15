@@ -288,9 +288,9 @@
     ],
     "money": {
       "pp": 0,
-      "gp": 200,
-      "sp": 5,
-      "cp": 6
+      "gp": 175,
+      "sp": 4,
+      "cp": 0
     }
   },
   "classFeatures": [
